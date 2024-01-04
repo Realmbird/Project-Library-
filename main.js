@@ -1,4 +1,4 @@
-const myLibrary = [new Book("bird", "were the birds go", "100")]
+const myLibrary = [new Book("bird", "were the birds go", "100"), new Book("blind", "scramblers", "200")]
 
 function Book(author, title, pages) {
     //object constructor 
@@ -10,8 +10,8 @@ function Book(author, title, pages) {
 
 function addBookToLibrary() {
     //do stuff here
+  
 }
-
 function displayBooks() {
     //display books on site
     const table = document.querySelector('table');
@@ -39,3 +39,12 @@ function displayBooks() {
 
     }
 displayBooks();
+const openbtn = document.querySelector("#new_book");
+const dialog = document.querySelector("dialog");
+const closebtn = document.querySelector("dialog > button");
+openbtn.addEventListener("click", () => {
+    dialog.showModal()
+});
+closebtn.addEventListener("click", () => {
+    dialog.close()
+});
