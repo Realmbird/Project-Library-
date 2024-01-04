@@ -1,8 +1,11 @@
-const myLibrary = ["bird", "are", "cool"];
+const myLibrary = [new Book("bird", "were the birds go", "100")]
 
-function Book() {
+function Book(author, title, pages) {
     //object constructor 
-
+    // author, title, number of pages
+    this.author = author;
+    this.title = title;
+    this.pages = pages;
 }
 
 function addBookToLibrary() {
@@ -11,8 +14,7 @@ function addBookToLibrary() {
 
 function displayBooks() {
     //display books on site
-    const title = document.querySelector('.title');
-    const table = document.createElement('table');
+    const table = document.querySelector('table');
     //wanted to see how to load element when page loads so did h1 
     //what I want 
     //const document.createElement('table');
@@ -20,11 +22,20 @@ function displayBooks() {
     // code to loop through books step 3
     //want books to display in table so I want to put everything into table and then load it into dom
     myLibrary.forEach(book => {
-        const Lbook = document.createElement('td')
-        Lbook.textContent = book
-        table.append(Lbook)
+        const BookRow = document.createElement('tr');
+        for(const property in book) {
+            const BookData = document.createElement('td');
+            BookData.textContent = book[property]
+            console.log(BookData)
+            BookRow.append(BookData)
+        }
+        /*
+        const BookAuthor = book.author;
+        const BookTitle = book.title;
+        const BookPages = book.pages;
+        */
+        table.append(BookRow)
     });
-    title.after(table);
 
     }
 displayBooks();
