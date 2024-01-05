@@ -20,3 +20,13 @@ dialog {
     font-size: 2rem;
     color: grey;
 }
+.false {
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+}
+.true {
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+}
