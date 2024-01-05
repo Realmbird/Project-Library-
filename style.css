@@ -1,0 +1,22 @@
+
+form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    justify-content: end;
+}
+dialog {
+    position: relative;
+}
+.close{
+    position: absolute;
+    background: transparent;
+    border: none;
+    top: 0.5px;
+    right: 0.5px;
+}
+.close span {
+    font-size: 2rem;
+    color: grey;
+}
