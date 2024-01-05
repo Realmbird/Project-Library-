@@ -57,16 +57,21 @@ const openbtn = document.querySelector("#new_book");
 const dialog = document.querySelector("dialog");
 const closebtn = document.querySelector(".close");
 const submitbtn = document.querySelector(".submit");
-const removebtns = document.querySelectorAll(".remove");
-removebtns.forEach(button => {
-    button.addEventListener("click", () => {
+const table = document.querySelector("table");
+
+// javascript event delegation parent
+table.addEventListener("click", (event) => {
+    const target = event.target;
+    //checks if remove
+    if (target.matches('.remove')){
+        const button = event.target;
         let i = parseInt(button.value);
-        //removes i
-        myLibrary = myLibrary.slice(0,i) + myLibrary.slice(i+1)
-        console.log()
-    })
-    displayBooks()
+        // Perform the removal
+        myLibrary.splice(i, 1); // goes to i and removes it
+        displayBooks(); // Refresh the display
+    }
 })
+
 openbtn.addEventListener("click", () => {
     dialog.showModal()
 });
