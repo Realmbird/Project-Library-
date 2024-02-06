@@ -1,19 +1,38 @@
+//refactored code to use class instead of plain constructors
+class Book {
+    constructor(author, title, pages, read) {
+        this.author = author;
+        this.title = title;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    switch() {
+        let prev = !(this.read);
+        this.read = prev;
+        displayBooks()
+    }
+
+}
+
 let myLibrary = [new Book("bird", "were the birds go", 100, false), new Book("blind", "scramblers", 200, false)]
 
-function Book(author, title, pages, read) {
-    //object constructor 
-    // author, title, number of pages
-    this.author = author;
-    this.title = title;
-    this.pages = pages;
-    this.read = read;
-}
-//function gets scope as a method from book
-Book.prototype.switch = function() {
-    let prev = !(this.read);
-    this.read = prev;
-    displayBooks()
-}
+// function Book(author, title, pages, read) {
+//     //object constructor 
+//     // author, title, number of pages
+//     this.author = author;
+//     this.title = title;
+//     this.pages = pages;
+//     this.read = read;
+// }
+// //function gets scope as a method from book
+// Book.prototype.switch = function() {
+//     let prev = !(this.read);
+//     this.read = prev;
+//     displayBooks()
+// }
+
+
 
 function addBookToLibrary() {
     //do stuff here
