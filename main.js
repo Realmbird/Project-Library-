@@ -40,8 +40,26 @@ function addBookToLibrary() {
     let title = document.getElementById("title");
     let pages = document.getElementById("pages");
     let read = document.getElementById("read");
-    myLibrary.push(new Book (author.value, title.value, pages.value, read.checked));
-    displayBooks()
+    let form = document.querySelector("form");
+    let mes = document.getElementById("message")
+    let valid = true
+   if(author.validity.valueMissing){
+        mes.textContent = "\nAuthor Missing"
+        valid = false
+   }
+   if(title.validity.valueMissing){
+        mes.textContent += "\nTitle Missing"
+        valid = false
+   }
+   if(pages.validity.valueMissing){
+        mes.textContent += "\nPages Missing"
+        valid = false
+   }
+   if(valid) {
+        mes.textContent = ""
+        myLibrary.push(new Book (author.value, title.value, pages.value, read.checked));
+        displayBooks()   
+   }
 }
 function displayBooks() {
     //display books on site

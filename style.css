@@ -30,3 +30,20 @@ dialog {
     border: none;
     border-radius: 5px;
 }
+input:valid {
+    background-color: green;
+    border: none;
+    outline: 2px solid deepskyblue;
+    border-radius: 5px;
+    accent-color: gold;
+}
+input:invalid {
+    background-color: red;
+    border: none;
+    outline: 2px solid purple;
+    border-radius: 5px;
+    accent-color: gold;
+}
+#message {
+    background-color: royalblue;
+}
